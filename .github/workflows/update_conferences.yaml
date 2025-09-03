@@ -6,8 +6,8 @@ on:
     - cron: "0 6 * * *"         # every day at 06:00 UTC (adjust as needed)
   push:
     paths:
-      - "scripts/**"            # rerun when your script changes
-      - ".github/workflows/update-readme.yml"
+      - "miner/**"            # rerun when your script changes
+      - ".github/workflows/update_conferences.yaml"
 
 permissions:
   contents: write               # needed to push with GITHUB_TOKEN
