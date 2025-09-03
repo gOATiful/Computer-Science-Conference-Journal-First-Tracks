@@ -4,7 +4,7 @@ Provides a list of computer science conferences that offer a journal first track
 ## Sources:
 - https://conf.researchr.org/
 
-## Conferences
+## Upcomming Conferences
 <!-- gen_start -->
 |Conference | Url | J1C2?| J1C2 Link| Partnered Journals|
 |---|---|---|---|---|
