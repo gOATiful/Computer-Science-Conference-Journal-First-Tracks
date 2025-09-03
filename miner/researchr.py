@@ -44,8 +44,9 @@ def create_md_table(samples: list):
     for sample in samples:
         conf = sample["name"]
         link = sample["url"]
+        j1c2_link = sample["j1c2_url"]
         has_j1c2 = "✅" if sample["j1c2_url"] != "" else "❌"
-        j1c2_url = f"[link]({sample["j1c2_url"]})" if sample["j1c2_url"] != "" else ""
+        j1c2_url = f"[link]({j1c2_link})" if sample["j1c2_url"] != "" else ""
         journals = "" if len(
             sample["partnered_journals"]) == 0 else sample["partnered_journals"]
         row = f"| {conf} | [&#127968;]({link}) | {has_j1c2} | {j1c2_url} | {journals} |\n"
