@@ -1,5 +1,8 @@
 # Computer-Science-Conference-Journal-First-Tracks
-Provides a list of computer science conferences that offer a journal first track together with their partnered journals or requirements
+Provides a list of computer science conferences that offer a journal first track together with their partnered journals or requirements.
+
+## Sources:
+- https://conf.researchr.org/
 
 ## Conferences
 |Conference | Url | J1C2?| J1C2 Link| Partnered Journals|
