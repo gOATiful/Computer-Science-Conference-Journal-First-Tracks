@@ -34,6 +34,7 @@ Provides a list of computer science conferences that offer a journal first track
 | FM 2026 | [&#127968;](https://conf.researchr.org/home/fm-2026) | ✅ | [link](https://conf.researchr.org/track/fm-2026/fm-2026-journal-first) |  |
 | ICST 2026 | [&#127968;](https://conf.researchr.org/home/icst-2026) | ❌ |  |  |
 | EASE 2026 | [&#127968;](https://conf.researchr.org/home/ease-2026) | ✅ | [link](https://conf.researchr.org/track/ease-2026/ease-2026-journal-first) |  |
+| ICT4S 2026 | [&#127968;](https://conf.researchr.org/home/ict4s-2026) | ✅ | [link](https://conf.researchr.org/track/ict4s-2026/ict4s-2026-journal-first) |  |
 | PLDI 2026 | [&#127968;](https://pldi26.sigplan.org) | ❌ |  |  |
 | ICSA 2026 | [&#127968;](https://conf.researchr.org/home/icsa-2026) | ✅ | [link](https://conf.researchr.org/track/icsa-2026/icsa-2026-journal-first) |  |
 | ECOOP 2026 | [&#127968;](https://2026.ecoop.org) | ❌ |  |  |
