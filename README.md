@@ -8,7 +8,6 @@ Provides a list of computer science conferences that offer a journal first track
 <!-- gen_start -->
 |Conference | Url | J1C2?| J1C2 Link| Partnered Journals|
 |---|---|---|---|---|
-| Requirements Engineering 2025 | [&#127968;](https://conf.researchr.org/home/RE-2025) | ✅ | [link](https://conf.researchr.org/track/RE-2025/RE-2025-journal-first) |  |
 | ICSME 2025 | [&#127968;](https://conf.researchr.org/home/icsme-2025) | ✅ | [link](https://conf.researchr.org/track/icsme-2025/icsme-2025-journal-first) |  |
 | ECSA 2025 | [&#127968;](https://conf.researchr.org/home/ecsa-2025) | ✅ | [link](https://conf.researchr.org/track/ecsa-2025/ecsa-2025-journal-first) |  |
 | ECBS 2025 | [&#127968;](https://conf.researchr.org/home/ecbs-2025) | ❌ |  |  |
@@ -40,6 +39,7 @@ Provides a list of computer science conferences that offer a journal first track
 | ECOOP 2026 | [&#127968;](https://2026.ecoop.org) | ❌ |  |  |
 | FSE 2026 | [&#127968;](https://conf.researchr.org/home/fse-2026) | ✅ | [link](https://conf.researchr.org/track/fse-2026/fse-2026-journal-first) |  |
 | Requirements Engineering 2026 | [&#127968;](https://conf.researchr.org/home/RE-2026) | ❌ |  |  |
+| ICSME 2026 | [&#127968;](https://conf.researchr.org/home/icsme-2026) | ❌ |  |  |
 | SPLASH/ISSTA 2026 | [&#127968;](https://conf.researchr.org/home/splash-issta-2026) | ❌ |  |  |
 | ‹Programming› 2026 | [&#127968;](https://2026.programming-conference.org) | ❌ |  |  |
 
