@@ -37,9 +37,11 @@ Provides a list of computer science conferences that offer a journal first track
 | PLDI 2026 | [&#127968;](https://pldi26.sigplan.org) | ❌ |  |  |
 | ICSA 2026 | [&#127968;](https://conf.researchr.org/home/icsa-2026) | ✅ | [link](https://conf.researchr.org/track/icsa-2026/icsa-2026-journal-first) |  |
 | ECOOP 2026 | [&#127968;](https://2026.ecoop.org) | ❌ |  |  |
+| STAF 2026 | [&#127968;](https://conf.researchr.org/home/staf-2026) | ❌ |  |  |
 | FSE 2026 | [&#127968;](https://conf.researchr.org/home/fse-2026) | ✅ | [link](https://conf.researchr.org/track/fse-2026/fse-2026-journal-first) |  |
 | Requirements Engineering 2026 | [&#127968;](https://conf.researchr.org/home/RE-2026) | ❌ |  |  |
 | ICSME 2026 | [&#127968;](https://conf.researchr.org/home/icsme-2026) | ❌ |  |  |
+| VARIABILITY 2026 | [&#127968;](https://conf.researchr.org/home/variability-2026) | ❌ |  |  |
 | SPLASH/ISSTA 2026 | [&#127968;](https://conf.researchr.org/home/splash-issta-2026) | ❌ |  |  |
 | ‹Programming› 2026 | [&#127968;](https://2026.programming-conference.org) | ❌ |  |  |
 
