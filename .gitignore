@@ -1,6 +1,8 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,venv,macos,dotenv,direnv,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,venv,macos,dotenv,direnv,python
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,venv,python,macos,dotenv,direnv
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,venv,python,macos,dotenv,direnv
+
+.vscode
 
 ### direnv ###
 .direnv
@@ -16,7 +18,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -243,7 +246,7 @@ pip-selfcheck.json
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,venv,macos,dotenv,direnv,python
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,venv,python,macos,dotenv,direnv
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 

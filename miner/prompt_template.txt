@@ -1,0 +1,1 @@
+List only the partnered journals or participating for this journal first track (comma separated): <url>. If no journals are specified, summarize the requirements in max 3 sentences. No introduction or filler words.

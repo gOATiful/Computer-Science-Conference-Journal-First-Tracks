@@ -5,6 +5,8 @@ on:
   schedule:
     - cron: "0 6 * * *"         # every day at 06:00 UTC (adjust as needed)
   push:
+    branches:
+      - "main"                  
     paths:
       - "miner/**"            # rerun when your script changes
       - ".github/workflows/update_conferences.yaml"
@@ -35,8 +37,11 @@ jobs:
         run: |
           if [ -f miner/requirements.txt ]; then pip install -r miner/requirements.txt; fi
 
-      - name: Run the updater
-        run: python miner/researchr.py
+      - name: Mine conferences from Researchr
+        run: python miner/mine_researchr.py
+      
+      - name: Get J1C2 requirements
+        run: python miner/get_j1c2_requirements.py
 
       - name: Commit changes (if any)
         run: |

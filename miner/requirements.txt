@@ -1,2 +1,5 @@
 requests-html
 lxml_html_clean
+openai
+tqdm
+requests_html
