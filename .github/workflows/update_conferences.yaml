@@ -5,6 +5,8 @@ on:
   schedule:
     - cron: "0 6 * * *"         # every day at 06:00 UTC (adjust as needed)
   push:
+    branches:
+      - "main"                  
     paths:
       - "miner/**"            # rerun when your script changes
       - ".github/workflows/update_conferences.yaml"
