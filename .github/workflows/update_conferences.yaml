@@ -35,8 +35,11 @@ jobs:
         run: |
           if [ -f miner/requirements.txt ]; then pip install -r miner/requirements.txt; fi
 
-      - name: Run the updater
-        run: python miner/researchr.py
+      - name: Mine conferences from Researchr
+        run: python miner/mine_researchr.py
+      
+      - name: Get J1C2 requirements
+        run: python miner/get_j1c2_requirements.py
 
       - name: Commit changes (if any)
         run: |

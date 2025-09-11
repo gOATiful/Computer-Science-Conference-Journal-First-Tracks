@@ -47,6 +47,7 @@ confs = load_processed_conferences(README_PATH)
 # filter for all conferences that have J1C2 but no journal requirements yet
 confs_to_check = [c for c in confs if (
     c.has_j1c2 and c.journal_requirements == "")]
+print(f"Found {len(confs_to_check)} conferences to check for J1C2 details.")
 
 updated_confs = update_j1c2_details_for(client, confs_to_check)
 
