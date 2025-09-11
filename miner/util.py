@@ -1,37 +1,39 @@
-def create_md_table(samples: list):
-    header = "|Conference | Url | J1C2?| J1C2 Link| Partnered Journals|\n" + \
-        "|---|---|---|---|---|\n"
-    md_text = header
-    for sample in samples:
-        conf = sample["name"]
-        link = sample["url"]
-        j1c2_link = sample["j1c2_url"]
-        has_j1c2 = "✅" if sample["j1c2_url"] != "" else "❌"
-        j1c2_url = f"[link]({j1c2_link})" if sample["j1c2_url"] != "" else ""
-        journals = "" if len(
-            sample["partnered_journals"]) == 0 else sample["partnered_journals"]
-        row = f"| {conf} | [&#127968;]({link}) | {has_j1c2} | {j1c2_url} | {journals} |\n"
-        md_text += row
-    return f"\n{md_text}\n"
+from model import Conference
+import re
 
 
-def load_processed_conferences(file_path):
+def create_md_table(conferences: list):
+    table_header = Conference.markdown_header() + \
+        Conference.markdown_separator()
+    table = table_header
+    for conference in conferences:
+        table += conference.to_markdown_row()
+    return f"\n{table}\n"
+
+
+def load_processed_conferences(file_path) -> list[Conference]:
     with open(file_path, "r", encoding="utf8") as infile:
         lines = infile.readlines()
 
     processed = []
     for line in lines:
         if line.startswith("|"):
-            parts = line.split("|")
-            if len(parts) > 2:
-                conf_name = parts[1].strip()
-                if conf_name and conf_name not in ["Conference", "---"]:
-                    conf = {
-                        "name": conf_name or "",
-                        "url": parts[2].strip() or "",
-                        "has_j1c2": parts[3].strip(),
-                        "j1c2_url": parts[4].strip() or "",
-                        "partnered_journals": parts[5].strip() or ""
-                    }
+            # skip header and separator
+            if not any(x in line for x in ["Conference", "---"]):
+                conf = Conference.from_markdown_line(line)
+                if not conf:
+                    print(f"Failed to parse line: {line}")
+                else:
                     processed.append(conf)
     return processed
+
+
+def update_conference_list(md_table: str, outfile_path: str):
+    readme_contens = ""
+    with open(outfile_path, "r") as infile:
+        readme_contens = infile.read()
+
+    pattern = r"(?<=<!-- gen_start -->).*?(?=<!-- gen_end -->)"
+    new_text = re.sub(pattern, md_table, readme_contens, flags=re.DOTALL)
+    with open(outfile_path, "w") as outfile:
+        outfile.write(new_text)

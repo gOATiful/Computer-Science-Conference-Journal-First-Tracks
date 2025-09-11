@@ -1,8 +1,7 @@
 from requests_html import HTMLSession
 from tqdm import tqdm
-import re
 
-from util import create_md_table
+from util import create_md_table, update_conference_list
 from model import Conference
 
 
@@ -10,19 +9,7 @@ from model import Conference
 
 base_url = "https://conf.researchr.org/"
 
-outfile_path = "README.md"
-
-
-def update_conference_list(md_table: str, outfile_path: str):
-    readme_contens = ""
-
-    with open(outfile_path, "r") as infile:
-        readme_contens = infile.read()
-
-    pattern = r"(?<=<!-- gen_start -->).*?(?=<!-- gen_end -->)"
-    new_text = re.sub(pattern, md_table, readme_contens, flags=re.DOTALL)
-    with open(outfile_path, "w") as outfile:
-        outfile.write(new_text)
+README_PATH = "README.md"
 
 
 session = HTMLSession()
@@ -45,6 +32,7 @@ for conf in tqdm(conferences):
     r = session.get(conf.url)
     r.html.render()
     links = r.html.find("a")  # find all links
+    # look for J1C2 links
     for link in links:
         linktext = link.full_text.lower()
         if ("journal" in linktext and "first" in linktext) or "j1c2" in linktext:
@@ -52,5 +40,5 @@ for conf in tqdm(conferences):
 
 
 md_table = create_md_table(conferences)
-update_conference_list(md_table, outfile_path)
-print("Updated conference list in README.md")
+update_conference_list(md_table, README_PATH)
+print(f"Updated conference list in {README_PATH}")

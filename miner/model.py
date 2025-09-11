@@ -17,9 +17,18 @@ class Conference:
             "requirements": self.requirements
         }
 
+    def to_markdown_row(self):
+        has_j1c2 = "✅" if self.has_j1c2 else "❌"
+        j1c2_link = f"[link]({self.j1c2_url})" if self.has_j1c2 else ""
+        journals = self.journal_requirements if self.journal_requirements else ""
+        return f"| {self.name} | [&#127968;]({self.url}) | {has_j1c2} | {j1c2_link} | {journals} |\n"
+
     @staticmethod
     def markdown_header():
-        return "|Conference | Url | J1C2?| J1C2 Link| Journal Requirements|\n"
+        return "| Conference | Url | J1C2?| J1C2 Link| Journal Requirements |\n"
+
+    def markdown_separator():
+        return "|---|---|---|---|---|\n"
 
     @staticmethod
     def from_dict(data: dict):
@@ -38,8 +47,18 @@ class Conference:
             if conf_name:
                 return Conference(
                     name=conf_name or "",
-                    url=parts[2].strip() or "",
-                    j1c2_url=parts[4].strip() or "",
+                    url=_extract_url_from_markdown(parts[2].strip()) or "",
+                    j1c2_url=_extract_url_from_markdown(
+                        parts[4].strip()) or "",
                     journal_requirements=parts[5].strip() or ""
                 )
-        return Conference("", "")
+        return None
+
+
+def _extract_url_from_markdown(md_link: str) -> str:
+    supported_links = ["[&#127968;](", "[link]("]
+
+    for link in supported_links:
+        if md_link.startswith(link) and md_link.endswith(")"):
+            return md_link[len(link):-1]
+    return ""
