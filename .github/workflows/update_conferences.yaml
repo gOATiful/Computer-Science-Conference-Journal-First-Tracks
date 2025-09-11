@@ -1,18 +1,21 @@
 name: Update Conferences
 
 on:
-  workflow_dispatch: {}         # allow manual runs
+  workflow_dispatch: {} # allow manual runs
   schedule:
-    - cron: "0 6 * * *"         # every day at 06:00 UTC (adjust as needed)
+    - cron: "0 6 * * *" # every day at 06:00 UTC (adjust as needed)
   push:
     branches:
-      - "main"                  
+      - "main"
     paths:
-      - "miner/**"            # rerun when your script changes
+      - "miner/**" # rerun when your script changes
       - ".github/workflows/update_conferences.yaml"
 
 permissions:
-  contents: write               # needed to push with GITHUB_TOKEN
+  contents: write # needed to push with GITHUB_TOKEN
+
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
 concurrency:
   group: update-readme
@@ -26,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0        # helpful for committing back
+          fetch-depth: 0 # helpful for committing back
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,7 +42,7 @@ jobs:
 
       - name: Mine conferences from Researchr
         run: python miner/mine_researchr.py
-      
+
       - name: Get J1C2 requirements
         run: python miner/get_j1c2_requirements.py
 
