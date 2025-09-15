@@ -36,9 +36,11 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install deps (if any)
-        run: |
-          if [ -f miner/requirements.txt ]; then pip install -r miner/requirements.txt; fi
+      - uses: actions/setup-python@v5
+        with:
+          cache: 'pip'            
+          cache-dependency-path: |
+            miner/requirements.txt
 
       - name: Mine conferences from Researchr
         run: python miner/get_confs_from_researchr.py
