@@ -41,16 +41,21 @@ jobs:
           if [ -f miner/requirements.txt ]; then pip install -r miner/requirements.txt; fi
 
       - name: Mine conferences from Researchr
-        run: python miner/mine_researchr.py
+        run: python miner/get_confs_from_researchr.py
 
       - name: Get J1C2 requirements
         run: python miner/get_j1c2_requirements.py
 
       - name: Commit changes (if any)
         run: |
+          if git diff --quiet README.md; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "githubaction@noreply.github.com"
 
           git add README.md
-          git commit -m "chore: update README [skip ci]"
+          git commit -m "chore: update README"
           git push
