@@ -48,11 +48,6 @@ jobs:
 
       - name: Commit changes (if any)
         run: |
-          if git diff --quiet README.md; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "githubaction@noreply.github.com"
 
